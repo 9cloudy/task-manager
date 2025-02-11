@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
         if (existinguser) {
             return NextResponse.json({ message: "user already exists" }, { status: 201 });
         }
-
+        console.log(userName)
         const newuser = new user({ userName});
         await newuser.save();
 
