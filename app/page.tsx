@@ -53,7 +53,7 @@ export default function TasksPage() {
   const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false);
   const [newTask, setNewTask] = useState({ title: "", description: "" });
   const [name, setName] = useState("");
-  const userName = localStorage.getItem("name");
+  const [userName, setuserName] = useState<string| null>();
 
   const loadTasks = async () => {
     try {
@@ -76,6 +76,7 @@ export default function TasksPage() {
   };
 
   useEffect(() => {
+    setuserName(localStorage.getItem("name"));
     loadTasks();
   }, [userName]);
 
@@ -163,6 +164,7 @@ export default function TasksPage() {
                 axios.post("api/user/create", {
                   userName: name,
                 });
+                console.log(name)
                 localStorage.setItem("name", name);
                 setLoading(false);
               }}
