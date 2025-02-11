@@ -33,4 +33,4 @@ Task manager is an productive web app built with with **Next.js** and **mongoDB*
 
 ## Deployment
 
-To deploy Max.AI, use a cloud hosting provider that supports Next.js and PostgreSQL, such as **Vercel** or **Railway**.
+To deploy, use a cloud hosting provider that supports Next.js and mongoDB, such as **Vercel** or **Railway**.
